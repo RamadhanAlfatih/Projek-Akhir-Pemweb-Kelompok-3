@@ -64,16 +64,16 @@ body {
 .image-container {
     position: relative;
     width: 100%;
-    height: 200px; /* Sesuaikan tinggi gambar */
+    height: 120px;
     overflow: hidden;
 }
 
 .image {
     position: relative;
-    top: -40px; /* Sesuaikan posisi vertikal gambar */
-    right: -270px; /* Sesuaikan posisi horizontal gambar */
-    width: 200px; /* Sesuaikan lebar gambar */
-    height: auto; /* Sesuaikan tinggi gambar */
+    top: -80px;
+    right: -270px;
+    width: 200px;
+    height: auto;
     z-index: -1;
     object-fit: cover;
 }
