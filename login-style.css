@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-image: url('images/background1.jpg'); */
+    background-color: #7A2424;
+    background-size: cover;
+    background-position: left;
+    margin: 0;
+    padding: 0;
+}
+
+.background-container {
+    position: absolute;
+    width: 100px;
+    height: 100px; /* Sesuaikan tinggi gambar */
+}
+
+.background4 {
+    position: relative;
+    right: 0px; /* Sesuaikan posisi horizontal gambar */
+    width: 1100px; /* Sesuaikan lebar gambar */
+    height: 600px; /* Sesuaikan tinggi gambar */
+    z-index: -1;
+    object-fit: cover;
+}
+
+.background-header {
+    position: absolute;
+    top: 200px;
+    left: 800px;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 72px;
+    text-align: left;
+}
+.background-paragraph {
+    position: absolute;
+    top: 390px;
+    left: 785px;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.6; /* Menentukan jarak antara baris */
+    text-align: left;
+    width: 200px; /* Menentukan lebar area teks */
+}
+
+.login-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    padding-left: 200px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    stroke: #7A2424;
+    stroke-width: 12px;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Sesuaikan tinggi gambar */
+    overflow: hidden;
+}
+
+.image {
+    position: relative;
+    top: -40px; /* Sesuaikan posisi vertikal gambar */
+    right: -270px; /* Sesuaikan posisi horizontal gambar */
+    width: 200px; /* Sesuaikan lebar gambar */
+    height: auto; /* Sesuaikan tinggi gambar */
+    z-index: -1;
+    object-fit: cover;
+}
+
+
+.login-container h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #7A2424;
+    font-size: 56px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom: 2px solid #7A2424;
+}
+
+.login-container button {
+    background-color: #7A2424;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.input-group label {
+    display: block;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 20px;
+    color: #7A2424;
+    text-decoration: none;
+    text-align: left;
+}
+
+.login-container p {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.forgot-password {
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    margin-left: 33px;
+}
+.register-link a{
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+
+.input-group.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.input-group.remember-me label {
+    white-space: nowrap;
+    margin-right: 25px;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    
+}
