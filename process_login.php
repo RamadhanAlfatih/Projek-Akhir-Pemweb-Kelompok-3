@@ -1,3 +1,25 @@
+<?php
+// Memeriksa apakah form login telah disubmit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Mengambil nilai yang dikirimkan melalui form
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Lakukan validasi login sesuai dengan logika aplikasi Anda
+    // Misalnya, periksa username dan password pada database
+
+    // Contoh validasi sederhana
+    if ($username === "admin" && $password === "admin123") {
+        // Jika login berhasil, Anda dapat melakukan redirect ke halaman dashboard atau halaman lainnya
+        header("Location: dashboard.php");
+        exit; // Penting untuk menghentikan eksekusi kode setelah melakukan redirect
+    } else {
+        // Jika login gagal, Anda dapat menampilkan pesan error atau melakukan tindakan lainnya
+        $error_message = "Invalid username or password";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +43,7 @@
         <div class="login-header">
             <h2>Login</h2>
         </div>
-        <form action="process_login.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="input-group">
                 <input type="text" name="username" placeholder="Username" required>
             </div>
@@ -40,19 +62,13 @@
         <div class="register-link">
             <p>Don't have an account? <a class="register-link a" href="signup.html">Sign in</a></p>
         </div>
+
+        <?php
+        // Menampilkan pesan error jika ada
+        if (isset($error_message)) {
+            echo '<div class="error-message">' . $error_message . '</div>';
+        }
+        ?>
     </div>
-    <div class="footer">
-        <div class="footer-left">
-            <a href="#"><img src="images/line.png" alt="Line Icon"></a>
-            <a href="#"><img src="images/instagram.png" alt="Instagram Icon"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter Icon"></a>
-            <a href="#"><img src="images/youtube.png" alt="YouTube Icon"></a>
-        </div>
-        <p>&copy; 2023 PawPaw. All rights reserved.</p>
-        <div class="footer-right">
-            <img src="images/logo.jpeg" alt="PawPaw Logo" class="logo">
-        </div>
-    </div>
-       
 </body>
 </html>
