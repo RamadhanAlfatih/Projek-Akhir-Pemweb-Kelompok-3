@@ -10,38 +10,38 @@ body {
 .background-container {
     position: absolute;
     width: 100px;
-    height: 100px;
+    height: 100px; /* Sesuaikan tinggi gambar */
 }
 
 .background4 {
     position: relative;
-    right: 0;
-    width: 1000px;
-    height: 600px;
+    right: 0px; /* Sesuaikan posisi horizontal gambar */
+    width: 1000px; /* Sesuaikan lebar gambar */
+    height: 500px; /* Sesuaikan tinggi gambar */
     z-index: -1;
     object-fit: cover;
 }
 
 .background-header {
     position: absolute;
-    top: 200px;
-    left: 700px;
+    top: 570px;
+    left: 250px;
     transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
-    font-size: 72px;
+    color: rgb(255, 255, 255);
+    font-size: 68px;
     text-align: left;
+    width: 400px;
 }
-
 .background-paragraph {
     position: absolute;
-    top: 390px;
-    left: 685px;
+    bottom: 40px;
+    left: 650px;
     transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1.6; /* Menentukan jarak antara baris */
     text-align: left;
-    width: 200px;
+    width: 350px; /* Menentukan lebar area teks */
 }
 
 .signup-container {
