@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('username', '', time() - 3600, '/');
         }
 
-        echo '<script>alert("Login successful. Redirecting to homepage."); window.location.href = "homepage.html";</script>';
+        echo '<script>alert("Login successful. Redirecting to homepage."); window.location.href = "homepage(setelah login).html";</script>';
     } else {
         // Login gagal
         echo '<script>alert("Invalid username or password. Please try again."); window.location.href = "login.html";</script>';
