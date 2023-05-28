@@ -1,10 +1,30 @@
+.all-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
 .container {
     display: flex;
     align-items: center;
     padding: 20px;
     justify-content: space-around;
-    margin-top: 100px;
-    
+    margin-bottom: 20px;
+    background-color: #fff;
+    gap: 100px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: #fff;
 }
 
 header {
@@ -14,7 +34,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 54px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     width: 300px;
     margin-left: 20%;
 }
@@ -27,21 +47,73 @@ input[type="text"] {
     width: 400px;
     height: 60px;
     padding: 20px;
-    padding-left: 40px;
     border: 1px solid #000000;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-weight: lighter;
-    font-size: 26px;
-    margin-left: 60px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.image-preview {
-    max-width: 300px;
-    max-height: 300px;
-    margin-bottom: 20px;
+.form-container {
+    flex: 1;
 }
 
-.image-preview img {
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group input[type="submit"] {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#image-dropzone {
+    width: 800px;
+    height: 200px;
+    border: 2px dashed #000000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dropzone-text {
+    font-size: 18px;
+    text-align: center;
+    padding: 12px;
+    color: #999;
+}
+
+#image-upload {
+    display: none;
+}
+
+#preview-image {
     max-width: 100%;
     max-height: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
+input[name="deskripsi"] {
+    width: 800px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
 }
