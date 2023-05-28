@@ -3,6 +3,33 @@
 <head>
     <title>Sign Up - PawPaw</title>
     <link rel="stylesheet" type="text/css" href="signup-style.css">
+    <script>
+        function showErrorMessage(message) {
+            alert(message);
+        }
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+
+            // Validasi username dan email di sisi client
+            // Anda juga harus melakukan validasi di sisi server untuk keamanan tambahan
+
+            // Contoh validasi username
+            if (username === "") {
+                showErrorMessage("Username is required.");
+                return false;
+            }
+
+            // Contoh validasi email
+            if (email === "") {
+                showErrorMessage("Email is required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="background-container">
@@ -19,12 +46,12 @@
         <div class="signup-header">
             <h2>Sign Up</h2>
         </div>
-        <form action="process_signup.php" method="post">
+        <form action="process_signup.php" method="post" onsubmit="return validateForm()">
             <div class="input-group">
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
             <div class="input-group">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="input-group">
                 <input type="password" name="password" placeholder="Password" required>
