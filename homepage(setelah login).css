@@ -26,34 +26,29 @@ ul {
 
 li {
   display: inline-block;
-  margin-left: 47cm;
+  margin-left: 46cm;
   position: absolute;
   margin-top: 20px;
-  background-color: white;
-  border-radius: 20px;
-  height: 40px;
-  width: 80px;
 }
 
 a {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
   position: absolute;
-  margin-left: 14px;
-  margin-top: 6px;
+  margin-right: 100px;
 }
 
 a:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .logonav {
-  width: 160px;
+  width: 200px;
   clip-path: polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%);
   position: absolute;
-  top: -40px;
+  top: -57px;
 }
 
 .search-form {
@@ -64,11 +59,11 @@ a:hover {
 }
 
 input[type="text"] {
-  padding: 15px 20px;
+  padding: 15px 250px;
   border: 1px solid #ccc;
   margin-left: 400px;
-  padding-right: 150px;
   margin-top: 20px;
+  padding-left: 20px;
 }
 
 button[type="submit"] {
@@ -281,7 +276,6 @@ h2 {
   height: 20px;
   filter: invert(100%);
   margin-left: 10px;
-  position: absolute;
 }
 
 .footer-right .logo {
