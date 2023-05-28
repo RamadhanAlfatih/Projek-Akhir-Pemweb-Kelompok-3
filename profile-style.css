@@ -17,8 +17,10 @@ body {
     top: 0;
     height: 500px;
     width: 100%;
-    /* Mengubah width menjadi 100% agar memenuhi lebar kontainer */
-    overflow: hidden;
+    background-color: #AC2E2E;
+    border-bottom: 2px solid #AC2E2E;
+    /* Mengubah width menjadi#000000 agar memenuhi lebar kontainer */
+    /* overflow: hidden; */
     /* Mengatur overflow agar konten yang keluar dari batas tidak ditampilkan */
 }
 
@@ -112,7 +114,7 @@ body {
 .follow-container {
     margin-top: 30px;
     margin-bottom: 100px;
-    background-color: rgb(227, 227, 227);
+    background-color: #ac2e2ef7;
     width: 100%;
     height: 120px;
     display: flex;
