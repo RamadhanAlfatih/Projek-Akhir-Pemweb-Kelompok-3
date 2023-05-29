@@ -1,6 +1,8 @@
 <?php
 require_once 'Database.php';
 
+session_start();
+
 class User {
     private $username;
     private $password;
@@ -25,6 +27,13 @@ class User {
     }
 }
 
+// Cek apakah cookie remember me telah diset atau tidak
+if (isset($_COOKIE['username'])) {
+    // Jika sudah diset, kita langsung redirect ke homepage
+    header('Location: homepage(setelah login).html');
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -35,17 +44,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($authenticationStatus) {
         // Login berhasil
-        // Lakukan aksi yang diperlukan, seperti menyimpan data login ke session, redirect ke halaman utama, dll.
+        $_SESSION['logged_in_user'] = $username;
 
         if ($rememberMe) {
             // Jika "Remember Me" dicentang, set cookie dengan masa berlaku 7 hari
             setcookie('username', $username, time() + (7 * 24 * 60 * 60), '/');
         } else {
             // Jika "Remember Me" tidak dicentang, hapus cookie jika ada
-            setcookie('username', '', time() - 3600, '/');
+            if (isset($_COOKIE['username'])) {
+                setcookie('username', '', time() - 3600, '/');
+            }
         }
 
-        echo '<script>alert("Login successful. Redirecting to homepage."); window.location.href = "homepage(setelah login).html";</script>';
+        // Redirect ke homepage
+        header('Location: homepage(setelah login).html');
+        exit();
     } else {
         // Login gagal
         echo '<script>alert("Invalid username or password. Please try again."); window.location.href = "login.html";</script>';
