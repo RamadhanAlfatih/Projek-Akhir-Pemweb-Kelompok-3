@@ -1,0 +1,299 @@
+body{
+    /* background-color: antiquewhite; */
+}
+
+.container{
+    font-family: 'Poppins', sans-serif;
+    /* background-color: aquamarine; */
+    font-size: 16px;
+}
+
+
+/* .section_container{
+    margin-top: 50px;
+} */
+
+    /* section1 */
+    .section1{
+        /* background-color: white; */
+        height: 100vh;
+        display: grid;
+    }
+        .back{
+            position: absolute;
+            top: 50px;
+            margin-left: 20px;
+            border: 50%;
+        }
+            .back:hover{
+                background-color: #7A2424;
+            }
+        .restaurant{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            /* background-color: burlywood; */
+            align-self: center;
+            align-items: center;
+        }
+            .restaurant_profile{
+                text-align: center;
+                display: grid;
+                justify-content: center;
+            }
+                .nama_resto{
+                    margin-top: 40px;
+                    margin-bottom: 50px;
+                    /* background-color: #fff; */
+                    font-size: 28px;
+                    font-weight: 600;
+                }
+        
+            .menu{
+                /* background-color: lightblue; */
+                margin-left: 80px;
+            }
+                .menu_nama{
+                    font-size: 48px;
+                    font-weight: 500;
+                    color: #7A2424;
+                }
+                .rate{
+                    /* background-color: pink; */
+                }
+                    .rate .gambar{
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        justify-content: center;
+                    }
+                    .rate p{
+                        /* background-color: #7A2424; */
+                        font-weight: 500;
+                        margin: 0 20px;
+                    }
+                    .rate h5{
+                        grid-area: title;
+                        /* text-align: center; */
+                        font-weight: 700;
+                        /* background-color: white; */
+                        text-align: center;
+                        margin-top: 20px;
+
+                    }
+                    .rate_paws p{
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .rate_rating{
+                        border-left: 1px solid black;
+                        border-right: 1px solid black;
+                    }
+                .menu_rate{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin: 40px 0;
+                    margin-bottom: 80px;
+                    font-size: 25px;
+                    width: 60%;
+                }
+                .menu_foto{
+                    /* background-color: bisque; */
+                }
+                    .menu_foto p{
+                        margin: 50px 0;
+                        font-size: 30px;
+                        font-weight: 500;
+                    }
+                    .foto_collection{
+                        display: flex;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        /* background-color: aqua; */
+                    }
+                        .box{
+                            /* width: 200px; */
+                            height: 346px;
+                            width: 261px;
+                            box-sizing: border-box;
+                            border: 1px solid black;
+                            /* background-color: white; */
+                            background-image: url(../images/foto-collection.png);
+                        }
+
+                        .foto_collection .collection4{
+                            display: grid;
+                            align-items: center;
+                            justify-content: center;
+                            background: none;
+                            background-color: #D9D9D9;
+                        }
+                        .foto_collection .collection4:hover{
+                            background-color: #c0c0c0;
+                        }
+    /* section2 */
+    .section2{
+        background-color: #EDEDED;
+        height: 167px;
+        display: grid;
+        align-items: center;
+        text-align: center;
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    /* section3 */
+    .section3{
+        /* background-color: skyblue; */
+        /* width: 100%; */
+        display: grid;
+        justify-content: center;
+        margin-top: 50px;
+    }
+        .items_container{
+            /* background-color: aliceblue; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 90px;
+            row-gap: 90px;
+        }
+            .item{
+                width: 375px;
+                height: 574px;
+                /* background-color: white; */
+                box-sizing: border-box;
+                border: 1px solid black;
+                padding: 40px 32px;
+                border-radius: 42px;
+                box-shadow: 40px 30px 4px rgba(0,0,0,25%);
+                transition-timing-function: linear;
+                transition-duration: .2s;
+            }
+            .item:hover{
+                transform: translateY(-5px);
+                box-shadow: 40px 35px 10px  rgba(0,0,0,25%);
+            }
+                .item_section1 {
+                    display: grid;
+                    grid-template-columns: 100px auto;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-areas: 
+                        'user nama'    
+                        'user tanggal'
+                    ;
+                    /* background-color: beige; */
+                    align-items: center;
+                }
+                    .item_section1 img{
+                        grid-area: user;
+                        width: 75px;
+                        /* background-color: aquamarine; */
+                        
+                    }
+                    .item_section1 .nama{
+                        /* background-color: aqua; */
+                        grid-area: nama;
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    .item_section1 .tanggal{
+                        /* background-color: antiquewhite; */
+                        grid-area: tanggal;
+                    }
+                .item_section2{
+                    display: flex;
+                    /* background-color: chartreuse; */
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+                    .item_section2 p{
+                        /* background-color: antiquewhite; */
+                        flex-grow: 1;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                    .item_section2 .rating{
+                        text-align: end;
+                        margin-right: 3px;
+                        font-size: 14px;
+                    }
+
+                /* .item_section3{
+                    background-image: url(../images/makanan.png);
+                } */
+                    .item_section3 .gambar{
+                        background-image: url(../images/makanan.png);
+                        width: 320px;
+                        height: 188px;
+                    }
+                    .item_section3 p{
+                        text-align: justify;
+                        width: 95%;
+                        margin-left: 5px;
+                        margin: 15px 5px;
+                        font-size: 13px;
+                    }
+                .item_section4{
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    gap: 10px;
+                }
+        .direction{
+            margin-top: 100px;
+            margin-bottom: 120px;
+            /* background-color: #EDEDED; */
+            text-align: center;
+        }        
+            .direction img{
+                margin: 0 15px;
+            }
+
+
+
+/* footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.footer p {
+    text-align: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.footer-left a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-left img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+    margin-left: 10px;
+}
+
+.footer-right .logo {
+    width: 100px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+
