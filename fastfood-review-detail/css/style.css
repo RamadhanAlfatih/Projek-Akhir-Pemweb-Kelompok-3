@@ -1,0 +1,150 @@
+.container{
+    margin-left: 315px;
+    margin-right: 144px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 100px;
+}
+
+.back{
+    position: absolute;
+    top: 50px;
+    margin-left: 20px;
+    border: 50%;
+}
+    .back:hover{
+        background-color: #7A2424;
+    }
+
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        'pic detail'
+    ;
+    width: fit-content;
+    gap: 47px;
+    align-items: center;
+}
+    .profile_Detail{
+        grid-area: profile_detail;
+    }
+    .profile img{
+        grid-area: pic;
+    }
+    .profile .name{
+        font-size: 48px;
+        font-weight: 600;
+    }
+    .profile .username{
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .profile .location{
+        font-size: 20px;
+        font-weight: 500;
+        color: #7A2424;
+    }
+
+.menu{
+    display: flex;
+    width: 840px;
+}
+    .menu h3{
+        width: 85%;
+        color: #7A2424;
+        font-size: 48px;
+        font-weight: 500;
+    }
+    .menu p{
+        align-self: center;
+        padding-left: 40px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+.menu, .hero{
+    margin-left: 276px;
+}
+.text{
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 115px;
+}
+
+.engagement_quantity{
+    display: flex;
+    gap: 104px;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 50px 0;
+}
+hr{
+    border-color: black;
+}
+.engagement_logo{
+    display: flex;
+    gap: 200px;
+    justify-content: space-evenly;
+    width:777px;
+    margin: 50px 0;
+}
+
+.profile2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'pic name'
+        'pic username'
+    ;
+    width: fit-content;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile2 img{
+    grid-area: pic;
+}
+.profile2 .name2{
+    grid-area: name;
+    font-size: 30px;
+    font-weight: 600;
+}
+.profile2 .username2{
+    grid-area: username;
+    font-size: 25px;
+    font-weight: 400;
+    align-self: flex-start;
+}
+
+.comment{
+    margin-left: 170px;
+    background-color: #D9D9D9;
+    font-size: 25px;
+    font-weight: 400;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 80px;
+
+}
+
+
+.section2{
+    margin-left: 315px;
+    margin-right: 144px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 50px;
+}
+
+.direction{
+    margin-top: 100px;
+    margin-bottom: 120px;
+    text-align: center;
+}        
+    .direction img{
+        margin: 0 15px;
+    }
