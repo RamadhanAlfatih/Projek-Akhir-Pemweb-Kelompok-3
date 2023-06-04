@@ -1,6 +1,7 @@
-*, html{
-    margin: 0;
-    padding: 0;
+*,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 /* header */
@@ -96,10 +97,13 @@ ul {
 } */
 
 .logonav {
-  width: 160px;
-  clip-path: polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%);
+  width: 140px;
+  height: 55px;
   position: absolute;
-  top: -40px;
+  top: 15px;
+  left: 10px;
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .search-form {
@@ -166,7 +170,7 @@ button[type="submit"]:hover::after {
 
 /* isi */
 
-.cover{
+.cover {
   padding: 50px;
   padding-top: 120px;
   height: 40%;
@@ -175,16 +179,16 @@ button[type="submit"]:hover::after {
   margin: 0 auto;
 }
 
-h1{
+h1 {
   text-align: center;
   padding: 20px;
 }
 
-.quote{
+.quote {
   text-align: center;
 }
 
-.tableresto{
+.tableresto {
   border-style: none;
   padding: 50px;
   margin-left: auto;
@@ -193,59 +197,59 @@ h1{
   border-spacing: 50px;
 }
 
-.money{
+.money {
   height: 10%;
   width: 10%;
   margin-right: 3px;
 }
 
-.harga{
-    display: inline;
-    vertical-align: middle;
+.harga {
+  display: inline;
+  vertical-align: middle;
 }
 
-td{
-    size: 1px;
-    padding: 20px;
-    border-radius: 15px;
+td {
+  size: 1px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-.ayam{
-    height: 100%;
-    width: 100%;
+.ayam {
+  height: 100%;
+  width: 100%;
 }
 
-.namaresto{
-    color: #AC2E2E;
-    font-weight: bold;
+.namaresto {
+  color: #ac2e2e;
+  font-weight: bold;
 }
 
-.seepaw{
-    background-color: #AC2E2E;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-    width: 50%;
-    border-radius: 25px;
-    transition: .2s ease-in-out;
-    display: block;
-    margin: 0px auto;
-  }
-  
-  .seepaw:hover{
-    color: gray;
-  }
+.seepaw {
+  background-color: #ac2e2e;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  width: 50%;
+  border-radius: 25px;
+  transition: 0.2s ease-in-out;
+  display: block;
+  margin: 0px auto;
+}
 
- /* footer */
+.seepaw:hover {
+  color: gray;
+}
 
- .footer {
+/* footer */
+
+.footer {
   background-color: #000;
   color: #fff;
   padding: 10px;
   text-align: center;
   position: absolute;
-  top: 57cm;
+  top: 60 cm;
   left: 0;
   right: 0;
   width: 100%;
