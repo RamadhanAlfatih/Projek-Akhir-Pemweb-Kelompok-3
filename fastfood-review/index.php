@@ -47,7 +47,7 @@ $items = [
                 <div class="dropdown-content">
                     <a href="#">Edit Profile</a>
                     <a href="#">Change Password</a>
-                    <a href="logout.php">Logout</a>
+                    <a href="../logout.php">Logout</a>
                 </div>
             </div>
     </div>
