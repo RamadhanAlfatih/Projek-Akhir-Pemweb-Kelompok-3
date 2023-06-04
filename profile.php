@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once 'Database.php';
+
+$pdo = Database::getConnection();
+
+// Query data dari tabel reviews
+$sql = "SELECT restaurant_name, description, rating, image_path FROM reviews";
+$stmt = $pdo->query($sql);
+$reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -7,30 +17,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="profile-style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <title>Profile</title>
     <script>
         // Fungsi untuk menangani klik pada tabel
         function handleTableClick(url) {
-          // Mengubah kelas "active" saat tabel diklik
-          this.classList.toggle("active");
-          
-          // Mengarahkan pengguna ke halaman tujuan
-          window.location.href = url;
+            // Mengubah kelas "active" saat tabel diklik
+            this.classList.toggle("active");
+
+            // Mengarahkan pengguna ke halaman tujuan
+            window.location.href = url;
         }
-        
+
         // Mendapatkan daftar tabel dengan kelas "tabel-1"
         var tables = document.getElementsByClassName("tabel-1");
-        
+
         // Menambahkan event listener untuk setiap tabel
         for (var i = 0; i < tables.length; i++) {
-          var url = "halaman_review_lengkap.html"; // Ganti dengan URL halaman review lengkapnya
-          tables[i].addEventListener("click", function() {
-            handleTableClick.call(this, url);
-          });
+            var url = "halaman_review_lengkap.html"; // Ganti dengan URL halaman review lengkapnya
+            tables[i].addEventListener("click", function() {
+                handleTableClick.call(this, url);
+            });
         }
-      </script>
+    </script>
 </head>
 
 <body>
@@ -38,25 +48,31 @@
         <div class="container">
             <nav>
                 <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html">
-                  <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo" class="logonav" />
+                    <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo" class="logonav" />
                 </a>
                 <ul>
-                  <li></li>
+                    <li></li>
                 </ul>
                 <form class="search-form">
                     <input type="text" placeholder="What Food Do You Have In Mind ?" />
-                  </form>
-                  <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html"><button type="submit">Search</button></a>
-                <div class="writereview"><a href="/Projek-Akhir-Pemweb-Kelompok-3/write-review.html">Write A Review</a></div>
+                </form>
+                <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html"><button type="submit">Search</button></a>
+                <div class="writereview"><a href="/Projek-Akhir-Pemweb-Kelompok-3/write-review.html">Write A Review</a>
+                </div>
                 <div class="dropdown">
-                  <div class="profile-button">
-                    <div class="profile-image">
-                      <img src="images/profile.png" alt="">
+                    <div class="profile-button">
+                        <div class="profile-image">
+                            <img src="images/profile.png" alt="">
+                        </div>
                     </div>
-                  </div>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Edit Profile</a>
+                        <a href="#">Change Password</a>
+                        <a href="logout.php">Logout</a>
+                    </div>
                 </div>
-                </div>
-              </nav>
+        </div>
+        </nav>
         </div>
     </header>
     <div class="background-container">
@@ -83,32 +99,43 @@
     </div>
 
     <div class="review-container">
-        <div class="tabel-1">
-            <div class="profile-photo">
-                <img src="images/profile.png" alt="">
-            </div>
-            <div class="name">NatanK</div>
-            <div class="date">May 2, 2023</div>
-            <div class="restaurant-name-rating">
-                <div class="restaurant-name">Luwe Burgerbar</div>
-                <div class="rating">
-                    <div class="stars">★★★★★</div>
+        <?php foreach ($reviews as $review) : ?>
+            <div class="tabel-1">
+                <div class="profile-photo">
+                    <img src="images/profile.png" alt="">
+                </div>
+                <div class="name">NatanK</div>
+                <div class="date">May 2, 2023</div>
+                <div class="restaurant-name-rating">
+                    <div class="restaurant-name"><?php echo $review['restaurant_name']; ?></div>
+                    <div class="rating">
+                        <?php
+                        // Menghitung jumlah bintang yang akan ditampilkan
+                        $rating = $review['rating'];
+                        $starCount = ceil($rating);
+
+                        // Menampilkan bintang sesuai jumlah rating
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $starCount) {
+                                echo '<span class="star">&#9733;</span>';
+                            } else {
+                                echo '<span class="star">&#9734;</span>';
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="restaurant-photo">
+                    <img src="<?php echo $review['image_path']; ?>" alt="">
+                </div>
+                <div class="description"><?php echo $review['description']; ?></div>
+                <div class="likes">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                    <div class="like-count">51 Likes</div>
                 </div>
             </div>
-            <div class="restaurant-photo">
-                <img src="images/profile_luweburgerbar.jpg" alt="">
-            </div>
-            <div class="description">Luwe Burgerbar, Menyajikan Kelezatan Burger dengan Sentuhan Modern yang Menggugah
-                Selera <br><br>
-
-                Luwe Burgerbar, sebuah tempat makan baru yang telah merevolusi citarasa burger dengan gaya modern yang
-                memukau. Dengan atmosfer yang trendi dan kontemporer, tempat ini ...</div>
-            <div class="likes">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                <div class="like-count">51 Likes</div>
-            </div>
-        </div>
-        <div class="tabel-2">
+        <?php endforeach; ?>
+        <!-- <div class="tabel-2">
             <div class="profile-photo">
                 <img src="images/profile.png" alt="">
             </div>
@@ -260,7 +287,7 @@
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                 <div class="like-count">72 Likes</div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="next-previous">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
