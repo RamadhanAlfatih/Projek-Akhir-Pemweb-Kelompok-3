@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" type="text/css" href="write-review-style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -25,7 +26,9 @@
                 <form class="search-form">
                     <input type="text" placeholder="What Food Do You Have In Mind ?" />
                 </form>
-                <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html"><button type="submit">Search</button></a>
+                <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html">
+                    <button type="submit">Search</button>
+                </a>
                 <div class="dropdown">
                     <div class="profile-button">
                         <div class="profile-image">
@@ -38,8 +41,7 @@
                         <a href="logout.php">Logout</a>
                     </div>
                 </div>
-        </div>
-        </nav>
+            </nav>
         </div>
     </header>
     <main>
@@ -48,26 +50,17 @@
                 <header>
                     <h1>Write a <span class="red-text">Paw</span>...</h1>
                 </header>
-                <div class="input-container">
-                    <input type="text" name="restaurant-name" placeholder="Restaurant name..." required>
-                </div>
             </div>
             <div class="container2">
                 <div class="form-container">
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <form id="review-form" action="submit-review.php" method="post" enctype="multipart/form-data">
+                        <input type="text" name="restaurant-name" placeholder="Restaurant name..." required>
                         <div id="image-dropzone" onclick="document.getElementById('image-upload').click()">
                             <div class="dropzone-text">Add photos (optional)...</div>
                             <input type="file" id="image-upload" name="image" accept="image/*"
                                 onchange="previewImage(event)" />
                             <img id="preview-image" src="#" alt="Preview" />
-                            <div class="form-group">
-                                <input class="right-align-button" type="upload" value="Upload" name="submit">
-                            </div>
                         </div>
-                    </form>
-                </div>
-                <div class="form-container">
-                    <form>
                         <div class="form-group">
                             <textarea name="deskripsi" placeholder="Description & Review..." required></textarea>
                         </div>
@@ -88,106 +81,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            const dropzone = document.getElementById('image-dropzone');
-            const input = document.getElementById('image-upload');
-            const preview = document.getElementById('preview-image');
-
-            dropzone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropzone.classList.add('dragover');
-            });
-
-            dropzone.addEventListener('dragleave', () => {
-                dropzone.classList.remove('dragover');
-            });
-
-            dropzone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                dropzone.classList.remove('dragover');
-
-                const file = e.dataTransfer.files[0];
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.addEventListener('load', () => {
-                        preview.setAttribute('src', reader.result);
-                        preview.style.display = 'block';
-                    });
-
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            input.addEventListener('change', () => {
-                const file = input.files[0];
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.addEventListener('load', () => {
-                        preview.setAttribute('src', reader.result);
-                        preview.style.display = 'block';
-                    });
-
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            function previewImage(event) {
-                const file = event.target.files[0];
-                const preview = document.getElementById('preview-image');
-
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.addEventListener('load', () => {
-                        preview.setAttribute('src', reader.result);
-                        preview.style.display = 'block';
-                    });
-
-                    reader.readAsDataURL(file);
-                } else {
-                    preview.style.display = 'none';
-                }
-            }
-
-            const stars = document.querySelectorAll('.star');
-            let selectedStar = null;
-
-            stars.forEach(star => {
-                star.addEventListener('click', () => {
-                    stars.forEach(s => {
-                        if (s.getAttribute('data-value') <= star.getAttribute('data-value')) {
-                            s.classList.add('selected');
-                        } else {
-                            s.classList.remove('selected');
-                        }
-                    });
-                    selectedStar = star.getAttribute('data-value');
-                });
-
-                star.addEventListener('mouseover', () => {
-                    stars.forEach(s => {
-                        if (s.getAttribute('data-value') <= star.getAttribute('data-value')) {
-                            s.style.color = '#ffc107';
-                        } else {
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-
-                star.addEventListener('mouseout', () => {
-                    stars.forEach(s => {
-                        if (s.classList.contains('selected')) {
-                            s.style.color = '#ffc107';
-                        } else {
-                            s.style.color = '#ccc';
-                        }
-                    });
-                });
-            });
-
-        </script>
     </main>
     <footer>
         <div class="footer">
@@ -203,6 +96,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="write-review.js"></script>
 </body>
 
 </html>
