@@ -172,6 +172,8 @@ button[type="submit"]:hover::after {
   justify-content: space-around;
   margin-bottom: 20px;
   background-color: #fff;
+  margin-top: 150px;
+  justify-content: space-between;
 }
 
 header {
@@ -182,8 +184,9 @@ header h1 {
   font-size: 80px;
   font-family: "Poppins", sans-serif;
   width: 300px;
-  margin-left: 50%;
-  margin-top: 150px;
+  left: 550px;
+  top: 110px;
+  position: absolute;
 }
 
 .red-text {
@@ -193,6 +196,7 @@ header h1 {
 .input-container {
   flex: 1;
   margin-right: 320px;
+  top: 200px;
 }
 
 input[type="text"] {
@@ -268,7 +272,7 @@ input[type="text"] {
   color: #999;
   justify-content: baseline;
   align-items: first baseline;
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 28px;
 }
 
