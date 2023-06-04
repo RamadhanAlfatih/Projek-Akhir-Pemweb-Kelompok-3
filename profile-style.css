@@ -7,6 +7,160 @@ body {
     overflow-x: hidden;
 }
 
+nav {
+    background-color: #ac2e2e;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-button {
+    position: absolute;
+    width: 40px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 450px;
+    bottom: -30px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image img {
+    max-width: 300px;
+    max-height: 90px;
+    border-radius: 50%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 450px;
+    bottom: -140px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* li {
+    display: inline-block;
+    margin-left: 47cm;
+    position: absolute;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+  } */
+
+.logonav {
+    width: 160px;
+    clip-path: polygon(10% 30%, 90% 30%, 90% 70%, 10% 70%);
+    position: absolute;
+    top: -40px;
+}
+
+.search-form {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 500px;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    margin-left: 300px;
+    margin-top: 20px;
+    text-indent: 10px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]::after {
+    content: "";
+    position: absolute;
+    margin-left: 10px;
+    width: 50%;
+    height: 2px;
+    background-color: #000000;
+    left: 0;
+    bottom: 5px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    font-weight: bold;
+}
+
+button[type="submit"]:hover::after {
+    transform: scaleX(1);
+}
+
+.writereview {
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 200px;
+    height: 33px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    right: 250px;
+    top: 26px;
+}
+
+
 .background-container {
     display: flex;
     justify-content: center;
@@ -40,7 +194,7 @@ body {
     /* Menghapus margin pada gambar */
 }
 
-.logout{
+.logout {
     position: absolute;
     background-color: #AC2E2E;
     color: white;

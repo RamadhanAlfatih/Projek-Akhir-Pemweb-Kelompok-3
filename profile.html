@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="profile-style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Profile</title>
     <!-- <script>
         // Fungsi untuk menangani klik pada tabel
@@ -33,10 +34,38 @@
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <nav>
+                <img src="images/logoputih.png" alt="PawPaw Logo" class="logonav" />
+                <ul>
+                    <li></li>
+                </ul>
+                <form class="search-form">
+                    <input type="text" placeholder="What Food Do You Have In Mind ?" />
+                    <button type="submit">Search</button>
+                </form>
+                <div class="writereview"><a href="#">Write A Review</a></div>
+                <div class="dropdown">
+                    <div class="profile-button">
+                        <div class="profile-image">
+                            <img src="images/profile.png" alt="">
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="#">Change Password</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </header>
     <div class="background-container">
         <img src="images/background.jpg" alt="Image" class="background">
     </div>
-    <button type="submit" class="logout">Logout</button>
+    <button type="logout-submit" class="logout">Logout</button>
     <div class="profile-container">
         <div class="photo">
             <img src="images/profile.png" alt="Photo profile">
@@ -240,15 +269,16 @@
     </div>
     <div class="footer">
         <div class="footer-left">
-          <a href="#"><img src="images/line.png" alt="Line Icon" /></a>
-          <a href="#"><img src="images/instagram.png" alt="Instagram Icon" /></a>
-          <a href="#"><img src="images/twitter.png" alt="Twitter Icon" /></a>
-          <a href="#"><img src="images/youtube.png" alt="YouTube Icon" /></a>
+            <a href="#"><img src="images/line.png" alt="Line Icon" /></a>
+            <a href="#"><img src="images/instagram.png" alt="Instagram Icon" /></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter Icon" /></a>
+            <a href="#"><img src="images/youtube.png" alt="YouTube Icon" /></a>
         </div>
         <p>&copy; 2023 PawPaw. All rights reserved.</p>
         <div class="footer-right">
-          <img src="images/logoitem.jpeg" alt="PawPaw Logo" class="logo" />
+            <img src="images/logoitem.jpeg" alt="PawPaw Logo" class="logo" />
         </div>
-      </div>
+    </div>
 </body>
+
 </html>
