@@ -58,26 +58,26 @@ nav {
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-left: 800px;
-    bottom: -140px;
-  }
-  
-  .dropdown-content a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-left: 800px;
+  bottom: -140px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 ul {
   list-style-type: none;
@@ -179,11 +179,11 @@ header {
 }
 
 header h1 {
-  margin: 0;
-  font-size: 54px;
+  font-size: 80px;
   font-family: "Poppins", sans-serif;
   width: 300px;
-  margin-left: 20%;
+  margin-left: 50%;
+  margin-top: 150px;
 }
 
 .red-text {
@@ -192,6 +192,7 @@ header h1 {
 
 .input-container {
   flex: 1;
+  margin-right: 320px;
 }
 
 input[type="text"] {
@@ -257,7 +258,7 @@ input[type="text"] {
   justify-content: center;
   cursor: pointer;
   margin-bottom: 100px;
-  position: relative; 
+  position: relative;
 }
 
 .dropzone-text {
@@ -279,10 +280,10 @@ input[type="text"] {
   max-width: 100%;
   max-height: 100%;
   display: none;
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 textarea[name="deskripsi"] {
