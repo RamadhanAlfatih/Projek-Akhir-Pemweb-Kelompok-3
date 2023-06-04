@@ -66,7 +66,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                     <div class="dropdown-content">
-                        <a href="profile.html">Edit Profile</a>
+                        <a href="/Projek-Akhir-Pemweb-Kelompok-3/profile.php">Edit Profile</a>
                         <a href="#">Change Password</a>
                         <a href="logout.php">Logout</a>
                     </div>
