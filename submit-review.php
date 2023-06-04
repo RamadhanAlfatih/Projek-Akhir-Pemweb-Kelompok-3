@@ -1,6 +1,8 @@
 <?php
 require_once 'Database.php';
 
+session_start();
+
 $pdo = Database::getConnection();
 
 // Check if form data is sent
@@ -8,6 +10,7 @@ if (isset($_POST['restaurant-name'], $_POST['deskripsi'], $_POST['rating'])) {
     $restaurantName = $_POST['restaurant-name'];
     $description = $_POST['deskripsi'];
     $rating = $_POST['rating'];
+    $username = $_SESSION['logged_in_user']; // Ambil username dari session
 
     // Check if fields are not empty
     if (!empty($restaurantName) && !empty($description) && !empty($rating)) {
@@ -24,9 +27,10 @@ if (isset($_POST['restaurant-name'], $_POST['deskripsi'], $_POST['rating'])) {
                 // File successfully uploaded, perform database operation
 
                 // Insert data into reviews table
-                $sql = "INSERT INTO reviews (restaurant_name, description, rating, image_path) VALUES (?, ?, ?, ?)";
+                $sql = "INSERT INTO reviews (restaurant_name, description, rating, image_path, created_date, username) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = $pdo->prepare($sql);
-                if ($stmt->execute([$restaurantName, $description, $rating, $targetFile])) {
+                $currentDate = date('Y-m-d'); // Tanggal saat ini
+                if ($stmt->execute([$restaurantName, $description, $rating, $targetFile, $currentDate, $username])) {
                     // Display successful notification using JavaScript
                     echo "<script>
                         alert('Review Submitted Successfully');

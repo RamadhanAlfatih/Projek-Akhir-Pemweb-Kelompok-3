@@ -8,7 +8,7 @@ require_once 'Database.php';
 $pdo = Database::getConnection();
 
 // Query data dari tabel reviews
-$sql = "SELECT restaurant_name, description, rating, image_path FROM reviews";
+$sql = "SELECT restaurant_name, description, rating, image_path, created_date, username FROM reviews";
 $stmt = $pdo->query($sql);
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -102,40 +102,42 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="review-container">
         <?php foreach ($reviews as $review) : ?>
-            <div class="tabel-1">
-                <div class="profile-photo">
-                    <img src="images/profile.png" alt="">
-                </div>
-                <div class="name"><?php echo $_SESSION['logged_in_user']; ?></div>
-                <div class="date">May 2, 2023</div>
-                <div class="restaurant-name-rating">
-                    <div class="restaurant-name"><?php echo $review['restaurant_name']; ?></div>
-                    <div class="rating">
-                        <?php
-                        // Menghitung jumlah bintang yang akan ditampilkan
-                        $rating = $review['rating'];
-                        $starCount = ceil($rating);
+            <?php if ($review['username'] === $_SESSION['logged_in_user']) : ?>
+                <div class="tabel-1">
+                    <div class="profile-photo">
+                        <img src="images/profile.png" alt="">
+                    </div>
+                    <div class="name"><?php echo $_SESSION['logged_in_user']; ?></div>
+                    <div class="date"><?php echo $review['created_date']; ?></div>
+                    <div class="restaurant-name-rating">
+                        <div class="restaurant-name"><?php echo $review['restaurant_name']; ?></div>
+                        <div class="rating">
+                            <?php
+                            // Menghitung jumlah bintang yang akan ditampilkan
+                            $rating = $review['rating'];
+                            $starCount = ceil($rating);
 
-                        // Menampilkan bintang sesuai jumlah rating
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $starCount) {
-                                echo '<span class="star">&#9733;</span>';
-                            } else {
-                                echo '<span class="star">&#9734;</span>';
+                            // Menampilkan bintang sesuai jumlah rating
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $starCount) {
+                                    echo '<span class="star">&#9733;</span>';
+                                } else {
+                                    echo '<span class="star">&#9734;</span>';
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
+                    </div>
+                    <div class="restaurant-photo">
+                        <img src="<?php echo $review['image_path']; ?>" alt="">
+                    </div>
+                    <div class="description"><?php echo $review['description']; ?></div>
+                    <div class="likes">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        <div class="like-count">51 Likes</div>
                     </div>
                 </div>
-                <div class="restaurant-photo">
-                    <img src="<?php echo $review['image_path']; ?>" alt="">
-                </div>
-                <div class="description"><?php echo $review['description']; ?></div>
-                <div class="likes">
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                    <div class="like-count">51 Likes</div>
-                </div>
-            </div>
+            <?php endif; ?>
         <?php endforeach; ?>
         <!-- <div class="tabel-2">
             <div class="profile-photo">
