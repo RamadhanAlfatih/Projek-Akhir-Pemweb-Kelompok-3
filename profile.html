@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <title>Profile</title>
-    <!-- <script>
+    <script>
         // Fungsi untuk menangani klik pada tabel
         function handleTableClick(url) {
           // Mengubah kelas "active" saat tabel diklik
@@ -30,7 +30,7 @@
             handleTableClick.call(this, url);
           });
         }
-      </script> -->
+      </script>
 </head>
 
 <body>
@@ -65,7 +65,9 @@
     <div class="background-container">
         <img src="images/background.jpg" alt="Image" class="background">
     </div>
-    <button type="logout-submit" class="logout">Logout</button>
+    <form action="logout.php" method="post" class="logout-form">
+        <button type="submit" class="logout">Logout</button>
+    </form>
     <div class="profile-container">
         <div class="photo">
             <img src="images/profile.png" alt="Photo profile">
