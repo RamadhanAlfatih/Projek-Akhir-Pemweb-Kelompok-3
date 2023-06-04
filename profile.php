@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+session_start();
+
 require_once 'Database.php';
 
 $pdo = Database::getConnection();
@@ -87,7 +89,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="profile-desc">
             <h1>Lil Natan</h1>
-            <p class="username">@NatanK</p>
+            <p class="username">@<?php echo $_SESSION['logged_in_user']; ?></p>
             <p>Hello ges! aku suka review makan nih! aku juga wibu loh!</p>
         </div>
     </div>
@@ -104,7 +106,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="profile-photo">
                     <img src="images/profile.png" alt="">
                 </div>
-                <div class="name">NatanK</div>
+                <div class="name"><?php echo $_SESSION['logged_in_user']; ?></div>
                 <div class="date">May 2, 2023</div>
                 <div class="restaurant-name-rating">
                     <div class="restaurant-name"><?php echo $review['restaurant_name']; ?></div>
