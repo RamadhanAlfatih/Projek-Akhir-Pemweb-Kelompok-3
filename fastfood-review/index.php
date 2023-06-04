@@ -1,14 +1,17 @@
-<?php 
-    $section_atas = ["images/user.png", "NatanK", "images/location.png", "4.7/5", "images/star.png"];
-    $items = [["Luwe Burgerbar","images/makanan1.png"], 
-            ["Sate Ayam Kerdil","images/makanan2.png"],
-            ["Liko's Dogfood","images/makanan3.png"],
-            ["Downtown Steak","images/makanan4.png"]];
-    
+<?php
+$section_atas = ["images/user.png", "NatanK", "images/location.png", "4.7/5", "images/star.png"];
+$items = [
+    ["Luwe Burgerbar", "images/makanan1.png"],
+    ["Sate Ayam Kerdil", "images/makanan2.png"],
+    ["Liko's Dogfood", "images/makanan3.png"],
+    ["Downtown Steak", "images/makanan4.png"]
+];
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +24,37 @@
 
     <title>Menu Review</title>
 </head>
+<header>
+    <div class="container">
+        <nav>
+            <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html">
+                <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo" class="logonav" />
+            </a>
+            <ul>
+                <li></li>
+            </ul>
+            <form class="search-form">
+                <input type="text" placeholder="What Food Do You Have In Mind ?" />
+            </form>
+            <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html"><button type="submit">Search</button></a>
+            <div class="writereview"><a href="#">Write A Review</a></div>
+            <div class="dropdown">
+                <div class="profile-button">
+                    <div class="profile-image">
+                        <img src="/Projek-Akhir-Pemweb-Kelompok-3/images/profile.png" alt="">
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Edit Profile</a>
+                    <a href="#">Change Password</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+    </div>
+    </nav>
+    </div>
+</header>
+
 <body>
 
 
@@ -76,10 +110,10 @@
             </div>
 
             <div class="section2">Here’s the paws for this menu</div>
-            
+
             <div class="section3">
                 <div class="items_container">
-                    <?php for ($i=0; $i < 8; $i++) : ?>
+                    <?php for ($i = 0; $i < 8; $i++) : ?>
                         <div class="item">
                             <div class="item_section1">
                                 <img src="images/user.png" alt="user">
@@ -114,18 +148,21 @@
 
     </div>
 
-    <div class="footer">
-      <div class="footer-left">
-        <a href="#"><img src="images/line.png" alt="Line Icon" /></a>
-        <a href="#"><img src="images/instagram.png" alt="Instagram Icon" /></a>
-        <a href="#"><img src="images/twitter.png" alt="Twitter Icon" /></a>
-        <a href="#"><img src="images/youtube.png" alt="YouTube Icon" /></a>
-      </div>
-      <p>&copy; 2023 PawPaw. All rights reserved.</p>
-      <div class="footer-right">
-        <img src="images/logo2.png" alt="PawPaw Logo" class="logo" />
-      </div>
-    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-left">
+                <a href="#"><img src="../images/line.png" alt="Line Icon" /></a>
+                <a href="#"><img src="../images/instagram.png" alt="Instagram Icon" /></a>
+                <a href="#"><img src="../images/twitter.png" alt="Twitter Icon" /></a>
+                <a href="#"><img src="../images/youtube.png" alt="YouTube Icon" /></a>
+            </div>
+            <p>&copy; 2023 PawPaw. All rights reserved.</p>
+            <div class="footer-right">
+                <img src="../images/logoitem.jpeg" alt="PawPaw Logo" class="logo" />
+            </div>
+        </div>
+    </footer>
 
 </body>
+
 </html>
