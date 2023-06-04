@@ -113,11 +113,9 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="restaurant-name"><?php echo $review['restaurant_name']; ?></div>
                         <div class="rating">
                             <?php
-                            // Menghitung jumlah bintang yang akan ditampilkan
                             $rating = $review['rating'];
                             $starCount = ceil($rating);
 
-                            // Menampilkan bintang sesuai jumlah rating
                             for ($i = 1; $i <= 5; $i++) {
                                 if ($i <= $starCount) {
                                     echo '<span class="star">&#9733;</span>';
