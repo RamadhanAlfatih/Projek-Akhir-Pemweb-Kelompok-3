@@ -1,103 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" type="text/css" href="write-review-style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Write a review</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container">
-            <nav>
-                <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html">
-                    <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo"
-                        class="logonav" />
-                </a>
-                <ul>
-                    <li></li>
-                </ul>
-                <form class="search-form">
-                    <input type="text" placeholder="What Food Do You Have In Mind ?" />
-                </form>
-                <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html">
-                    <button type="submit">Search</button>
-                </a>
-                <div class="dropdown">
-                    <div class="profile-button">
-                        <div class="profile-image">
-                            <img src="/Projek-Akhir-Pemweb-Kelompok-3/images/profile.png" alt="">
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <a href="#">Edit Profile</a>
-                        <a href="#">Change Password</a>
-                        <a href="logout.php">Logout</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav>
+          <a
+            href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html"
+          >
+            <img
+              src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png"
+              alt="PawPaw Logo"
+              class="logonav"
+            />
+          </a>
+          <ul>
+            <li></li>
+          </ul>
+          <form class="search-form">
+            <input type="text" placeholder="What Food Do You Have In Mind ?" />
+          </form>
+          <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html">
+            <button type="submit">Search</button>
+          </a>
+          <div class="dropdown">
+            <div class="profile-button">
+              <div class="profile-image">
+                <img
+                  src="/Projek-Akhir-Pemweb-Kelompok-3/images/profile.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="dropdown-content">
+              <a href="#">Edit Profile</a>
+              <a href="#">Change Password</a>
+              <a href="logout.php">Logout</a>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <main>
-        <div class="all-container">
-            <div class="container">
-                <header>
-                    <h1>Write a <span class="red-text">Paw</span>...</h1>
-                </header>
-            </div>
-            <div class="container2">
-                <div class="form-container">
-                    <form id="review-form" action="submit-review.php" method="post" enctype="multipart/form-data">
-                        <input type="text" name="restaurant-name" placeholder="Restaurant name..." required>
-                        <div id="image-dropzone" onclick="document.getElementById('image-upload').click()">
-                            <div class="dropzone-text">Add photos (optional)...</div>
-                            <input type="file" id="image-upload" name="image" accept="image/*"
-                                onchange="previewImage(event)" />
-                            <img id="preview-image" src="#" alt="Preview" />
-                        </div>
-                        <div class="form-group">
-                            <textarea name="deskripsi" placeholder="Description & Review..." required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <div class="star-rating">
-                                <span class="star" data-value="1">&#9733;</span>
-                                <span class="star" data-value="2">&#9733;</span>
-                                <span class="star" data-value="3">&#9733;</span>
-                                <span class="star" data-value="4">&#9733;</span>
-                                <span class="star" data-value="5">&#9733;</span>
-                            </div>
-                            <span class="rating-text">Select your rating</span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Post your review" name="Submit">
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div class="all-container">
+        <div class="container">
+          <header>
+            <h1>Write a <span class="red-text">Paw</span>...</h1>
+          </header>
         </div>
+        <div class="container2">
+          <div class="form-container">
+            <form
+              id="review-form"
+              action="submit-review.php"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input
+                type="text"
+                name="restaurant-name"
+                placeholder="Restaurant name..."
+                required
+              />
+              <div
+                id="image-dropzone"
+                onclick="document.getElementById('image-upload').click()"
+              >
+                <div class="dropzone-text">Add photos (optional)...</div>
+                <input
+                  type="file"
+                  id="image-upload"
+                  name="image"
+                  accept="image/*"
+                  onchange="previewImage(event)"
+                />
+                <img id="preview-image" src="#" alt="Preview" />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="deskripsi"
+                  placeholder="Description & Review..."
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <div class="star-rating">
+                  <span class="star" data-value="1">&#9733;</span>
+                  <span class="star" data-value="2">&#9733;</span>
+                  <span class="star" data-value="3">&#9733;</span>
+                  <span class="star" data-value="4">&#9733;</span>
+                  <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <span class="rating-text">Select your rating</span>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Post your review" name="Submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
-        <div class="footer">
-            <div class="footer-left">
-                <a href="#"><img src="images/line.png" alt="Line Icon" /></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram Icon" /></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter Icon" /></a>
-                <a href="#"><img src="images/youtube.png" alt="YouTube Icon" /></a>
-            </div>
-            <p>&copy; 2023 PawPaw. All rights reserved.</p>
-            <div class="footer-right">
-                <img src="images/logoitem.jpeg" alt="PawPaw Logo" class="logo" />
-            </div>
+      <div class="footer">
+        <div class="footer-left">
+          <a href="#"><img src="images/line.png" alt="Line Icon" /></a>
+          <a href="#"
+            ><img src="images/instagram.png" alt="Instagram Icon"
+          /></a>
+          <a href="#"><img src="images/twitter.png" alt="Twitter Icon" /></a>
+          <a href="#"><img src="images/youtube.png" alt="YouTube Icon" /></a>
         </div>
+        <p>&copy; 2023 PawPaw. All rights reserved.</p>
+        <div class="footer-right">
+          <img src="images/logoitem.jpeg" alt="PawPaw Logo" class="logo" />
+        </div>
+      </div>
     </footer>
 
     <script src="write-review.js"></script>
-</body>
-
+  </body>
 </html>
