@@ -113,6 +113,7 @@ $items = [
 
             <div class="section3">
                 <div class="items_container">
+                <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood-review-detail/index.html">
                     <?php for ($i = 0; $i < 8; $i++) : ?>
                         <div class="item">
                             <div class="item_section1">
@@ -136,6 +137,7 @@ $items = [
                             </div>
                         </div>
                     <?php endfor ?>
+                    </a>
                 </div>
 
                 <div class="direction">
@@ -144,8 +146,8 @@ $items = [
                 </div>
             </div>
         </div>
-
-
+        
+    </a>
     </div>
 
     <footer>
