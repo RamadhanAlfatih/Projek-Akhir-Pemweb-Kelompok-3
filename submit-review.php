@@ -34,7 +34,7 @@ if (isset($_POST['restaurant-name'], $_POST['deskripsi'], $_POST['rating'])) {
                     // Display successful notification using JavaScript
                     echo "<script>
                         alert('Review Submitted Successfully');
-                        window.location.href = '/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html';
+                        window.location.href = '/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).php';
                       </script>";
                 } else {
                     // Error in database operation

@@ -3,6 +3,12 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['logged_in_user'])) {
+  // Jika pengguna belum login, alihkan mereka ke halaman login
+  header('Location: http://localhost/Projek-Akhir-Pemweb-Kelompok-3/login.html');
+  exit;
+}
+
 require_once 'Database.php';
 
 $pdo = Database::getConnection();

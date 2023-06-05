@@ -30,7 +30,7 @@ class User {
 // Cek apakah cookie remember me telah diset atau tidak
 if (isset($_COOKIE['username'])) {
     // Jika sudah diset, kita langsung redirect ke homepage
-    header('Location: homepage(setelah login).html');
+    header('Location: homepage(setelah login).php');
     exit();
 }
 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Redirect ke homepage
-        header('Location: homepage(setelah login).html');
+        header('Location: homepage(setelah login).php');
         exit();
     } else {
         // Login gagal

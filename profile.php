@@ -5,6 +5,12 @@ session_start();
 
 require_once 'Database.php';
 
+if (!isset($_SESSION['logged_in_user'])) {
+    // Jika pengguna belum login, alihkan mereka ke halaman login
+    header('Location: http://localhost/Projek-Akhir-Pemweb-Kelompok-3/login.html');
+    exit;
+  }
+
 $pdo = Database::getConnection();
 
 // Query data dari tabel reviews
@@ -49,7 +55,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <div class="container">
             <nav>
-                <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).html">
+                <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(setelah login).php">
                     <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo" class="logonav" />
                 </a>
                 <ul>
