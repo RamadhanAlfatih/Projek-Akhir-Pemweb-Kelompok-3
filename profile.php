@@ -94,7 +94,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <img src="images/profile.png" alt="Photo profile">
         </div>
         <div class="profile-desc">
-            <h1>Lil Natan</h1>
+            <h1>Lil <?php echo $_SESSION['logged_in_user']; ?></h1>
             <p class="username">@<?php echo $_SESSION['logged_in_user']; ?></p>
             <p>Hello ges! aku suka review makan nih! aku juga wibu loh!</p>
         </div>
