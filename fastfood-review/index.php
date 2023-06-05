@@ -114,7 +114,7 @@ $items = [
             <div class="section3">
                 <div class="items_container">
                 <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood-review-detail/index.html">
-                    <?php for ($i = 0; $i < 8; $i++) : ?>
+                    <?php for ($i = 0; $i < 1; $i++) : ?>
                         <div class="item">
                             <div class="item_section1">
                                 <img src="images/user.png" alt="user">
