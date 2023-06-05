@@ -22,7 +22,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <header>
     <div class="container">
       <nav>
-        <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(sebelum login).html">
+        <a href="/Projek-Akhir-Pemweb-Kelompok-3/homepage(sebelum login).php">
           <img src="/Projek-Akhir-Pemweb-Kelompok-3/landing-page/img/LOGO.png" alt="PawPaw Logo" class="logonav" />
         </a>
         <ul>
