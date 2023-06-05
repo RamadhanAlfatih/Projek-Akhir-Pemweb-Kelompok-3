@@ -14,6 +14,6 @@ if (isset($_COOKIE['username'])) {
 }
 
 // Redirect ke halaman login
-header('Location: login.html');
+header('Location: login.php');
 exit();
 ?>

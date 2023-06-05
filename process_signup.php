@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $registrationStatus = $user->register();
 
     if ($registrationStatus === 'Registration successful.') {
-        echo '<script>alert("Registration successful. Please log in."); window.location.href = "login.html";</script>';
+        echo '<script>alert("Registration successful. Please log in."); window.location.href = "login.php";</script>';
     } else {
         echo '<script>alert("' . $registrationStatus . '"); window.location.href = "signup.html";</script>';
     }

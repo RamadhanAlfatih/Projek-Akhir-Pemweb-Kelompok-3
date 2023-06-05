@@ -28,8 +28,8 @@ class User {
 }
 
 // Cek apakah cookie remember me telah diset atau tidak
-if (isset($_COOKIE['username'])) {
-    // Jika sudah diset, kita langsung redirect ke homepage
+if (isset($_COOKIE['username']) && basename($_SERVER['PHP_SELF']) === 'login.php') {
+    // Jika sudah diset dan pengguna berada pada login.php, langsung redirect ke homepage
     header('Location: homepage(setelah login).php');
     exit();
 }
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         // Login gagal
-        echo '<script>alert("Invalid username or password. Please try again."); window.location.href = "login.html";</script>';
+        echo '<script>alert("Invalid username or password. Please try again."); window.location.href = "login.php";</script>';
     }
 }
 ?>

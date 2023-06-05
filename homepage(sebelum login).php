@@ -32,7 +32,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <input type="text" placeholder="What Food Do You Have In Mind ?" />
         </form>
         <a href="/Projek-Akhir-Pemweb-Kelompok-3/fastfood.html"><button type="submit">Search</button></a>
-        <a href="/Projek-Akhir-Pemweb-Kelompok-3/login.html"><button href="login.html" class="login-button">Login</button> </a>
+        <a href="/Projek-Akhir-Pemweb-Kelompok-3/login.php"><button href="login.php" class="login-button">Login</button> </a>
       </nav>
     </div>
   </header>
